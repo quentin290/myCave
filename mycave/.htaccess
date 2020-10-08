@@ -1,0 +1,26 @@
+Option +FollowSymlinks
+RewriteEngine on
+#Réécriture et redirection URL de la page cave.php
+RewriteRule ^cave-a-vin$ cave.php [E=BREAK:1,L]
+RewriteCond %{ENV:REDIRECT_BREAK} !^1$
+RewriteRule ^cave.php$ /cave-a-vin? [R=301,L]
+
+#Réécriture et redirection URL de la page index.php
+RewriteRule ^accueil$ index.php [E=BREAK:1,L]
+RewriteCond %{ENV:REDIRECT_BREAK} !^1$
+RewriteRule ^index.php$ /accueil? [R=301,L]
+
+#Réécriture et redirection URL de la page formulaire.php
+RewriteRule ^ajout-de-référence$ formulaire.php [E=BREAK:1,L]
+RewriteCond %{ENV:REDIRECT_BREAK} !^1$
+RewriteRule ^formulaire.php$ /ajout-de-référence? [R=301,L]
+
+#Réécriture et redirection URL de la page modifier.php
+RewriteRule ^modifications$ modifier.php [E=BREAK:1,L]
+RewriteCond %{ENV:REDIRECT_BREAK} !^1$
+RewriteRule ^modifier.php$ /modifications? [R=301,L]
+
+#Réécriture et redirection URL de la page contact.php
+RewriteRule ^contact$ contact.php [E=BREAK:1,L]
+RewriteCond %{ENV:REDIRECT_BREAK} !^1$
+RewriteRule ^contact.php$ /contact? [R=301,L]
